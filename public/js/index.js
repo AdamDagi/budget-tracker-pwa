@@ -1,3 +1,14 @@
+window.addEventListener('load', async event => {
+  if('serviceWorker' in navigator) {
+    try {
+      const register = await navigator.serviceWorker.register('../sw.js');
+      console.log('sucess register', register);
+    } catch (e) {
+      console.log(e);
+    };
+  };
+});
+
 let transactions = [];
 let myChart;
 
